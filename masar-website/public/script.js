@@ -4,7 +4,7 @@
    ===================================================================== */
 
 // WhatsApp number in international format, digits only (placeholder — replace)
-const WA_NUMBER = '201000000000';
+const WA_NUMBER = '201042464651';
 
 // Reviews section: set to true once real reviews are added to REVIEWS below
 const SHOW_REVIEWS = false;
