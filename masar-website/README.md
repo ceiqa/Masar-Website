@@ -72,4 +72,11 @@ In `public/script.js`, find `REVIEWS`. The four entries there are **samples** (t
 
 ## Deploying on Vercel
 
-Everything the site needs is in `public/`, so Vercel can serve it as a static site: set the Output Directory to `public` and leave the build command empty. `server.js` is only needed for local runs or a Node host.
+Vercel runs `server.js` (Express): it serves `public/` and answers unknown addresses with `public/404.html` and a real 404 status, so search engines don't index stray URLs as copies of the home page.
+
+## SEO files
+
+- `public/robots.txt` points search engines to the sitemap.
+- `public/sitemap.xml` lists the pages to index. Add a `<url>` for each blog post once the Blog section is switched on.
+- Link previews (WhatsApp, TikTok, etc.) use `public/assets/og-image.jpg` (1200×630) and the `og:` tags in the `<head>` of `index.html`.
+- Business details for Google are in the `application/ld+json` block in the same `<head>`.

@@ -76,7 +76,7 @@ button{font:inherit;color:inherit}
 .links a.here{color:var(--cream);background:rgba(244,228,196,.14)}
 .head-actions{display:flex;align-items:center;gap:10px}
 .lang{display:flex;padding:3px;border:1px solid var(--line);border-radius:999px;background:rgba(15,24,41,.35)}
-.lang button{border:0;background:none;cursor:pointer;font-family:'Inter',sans-serif;font-size:.8rem;font-weight:600;padding:5px 12px;border-radius:999px;color:var(--mist)}
+.lang button{border:0;background:none;cursor:pointer;font-family:'Inter',sans-serif;font-size:.8rem;font-weight:600;padding:5px 12px;min-width:44px;min-height:44px;border-radius:999px;color:var(--mist)}
 .lang button[data-lang="ar"]{font-family:'Tajawal',sans-serif;font-size:.95rem;padding:3px 12px}
 .lang button.on{background:var(--cream);color:var(--navy)}
 .menu{display:none;border:0;background:none;cursor:pointer;width:40px;height:40px;position:relative}
@@ -105,6 +105,8 @@ h1 .ln{display:inline-block}
 h1 .accent-ln{color:var(--cream)}
 .lede{max-width:52ch;margin:26px 0 34px;color:#E9E1D2;font-size:1.1rem;text-shadow:0 2px 18px rgba(0,0,0,.4)}
 .actions{display:flex;flex-wrap:wrap;gap:14px}
+.notfound img{width:88px;height:88px;object-fit:contain;margin-bottom:28px}
+.notfound .lede span{display:block;margin-top:8px;font-family:'Inter',system-ui,sans-serif;font-size:.95rem;color:var(--mist)}
 
 .glass{background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(16px) saturate(1.2);-webkit-backdrop-filter:blur(16px) saturate(1.2);box-shadow:0 30px 70px rgba(0,0,0,.28)}
 .origin-card{justify-self:end;width:min(380px,100%);padding:26px;border-radius:6px;align-self:end;margin-bottom:40px;transition:transform .2s ease-out}
@@ -367,8 +369,15 @@ body[data-lang="en"] .quote blockquote{font-family:'Fraunces',Georgia,serif;font
   .track-tabs button{flex:none;padding:12px 8px;text-align:center;place-items:center;min-height:64px}
   .track-tabs button b{font-size:.9rem;line-height:1.3}
   .track-tabs button small{display:none}
-  .actions{flex-direction:column;align-items:stretch}
-  .actions .btn{width:100%}
+  /* hero: sit the text low and the two buttons side by side, so both stay above the floating WhatsApp button */
+  .hero{align-content:end;padding-bottom:100px}
+  .hero h1{font-size:2.3rem}
+  .lede{margin:18px 0 22px}
+  .actions{flex-wrap:nowrap;gap:10px}
+  .actions .btn{flex:1 1 0;padding:13px 10px;font-size:.92rem}
+  /* floating WhatsApp button waits until the hero (which has its own buttons) is scrolled past */
+  .wa{opacity:0;transform:scale(.6);pointer-events:none;transition:opacity .3s,transform .3s}
+  .wa.show{opacity:1;transform:none;pointer-events:auto}
   .lede{font-size:1rem}
   .sec-head{margin-bottom:32px}
   .stop-title{font-size:1.08rem}
@@ -386,6 +395,9 @@ body[data-lang="en"] .quote blockquote{font-family:'Fraunces',Georgia,serif;font
   .pass-route{gap:8px}
   .pass-main{padding:22px 18px}
   .head{gap:10px}
+  .actions .btn{font-size:.84rem;padding:12px 6px}
+  .hero h1{font-size:2.05rem}
+  .lede{font-size:.95rem;margin:14px 0 20px}
 }
 /* hover effects only on devices that can hover (avoids "stuck" hover on phones) */
 @media (hover:none){

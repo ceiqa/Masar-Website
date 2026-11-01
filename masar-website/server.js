@@ -10,6 +10,7 @@ app.use("/assets", express.static(path.join(PUBLIC, "assets"), { maxAge: "30d" }
 app.use(express.static(PUBLIC, { maxAge: "5m", extensions: ["html"] }));
 
 // Blog posts live in public/blog/<slug>.html and are served at /blog/<slug>
-app.get("*", (_, res) => res.sendFile(path.join(PUBLIC, "index.html")));
+// Anything else is a real 404, so search engines don't index stray URLs as copies of the home page
+app.use((_, res) => res.status(404).sendFile(path.join(PUBLIC, "404.html")));
 
 app.listen(PORT, () => console.log(`Masar running at http://localhost:${PORT}`));

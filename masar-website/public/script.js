@@ -436,7 +436,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(fals
    ===================================================================== */
 const root = document.documentElement;
 const photo = $('#photo'), heroCopy = $('#heroCopy'), originCard = $('#originCard'), head = $('#head');
-const rail = $('#rail'), railFill = $('#railFill'), railPlane = $('#railPlane');
+const rail = $('#rail'), railFill = $('#railFill'), railPlane = $('#railPlane'), wa = $('.wa');
 if (!SHOW_REVIEWS) {
   $('#reviews').hidden = true;
   $$('a[href="#reviews"]').forEach(a => { (a.closest('li') || a).hidden = true; });
@@ -454,6 +454,7 @@ function onScroll() {
   const y = scrollY, p = max > 0 ? Math.min(1, y / max) : 0;
   root.style.setProperty('--scroll', p.toFixed(4));
   head.classList.toggle('solid', y > 40);
+  wa.classList.toggle('show', y > innerHeight * .6);
 
   // hero text drifts up and fades faster than the page — the photo stays put
   if (!reduced) {
