@@ -279,9 +279,6 @@ function updateRoute() {
   if (!userPickedStop && !current.classList.contains('open')) openStop(current);
 }
 
-/* ---------- About values ---------- */
-$$('.value').forEach(v => v.addEventListener('click', () => $$('.value').forEach(x => x.classList.toggle('on', x === v))));
-
 /* ---------- University logos: auto-scroll left, click a logo to stop ---------- */
 const unisTrack = $('#unisTrack'), unisName = $('#unisName');
 let uniPicked = null;

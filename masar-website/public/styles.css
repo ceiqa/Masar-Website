@@ -215,14 +215,6 @@ body[data-lang="en"] .stop-title{font-family:'Fraunces',serif;font-weight:600}
 /* ===== About ===== */
 .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
 .about-lede{font-size:1.12rem;color:#E4DDD0;margin:0;max-width:56ch}
-.values{display:grid;gap:12px}
-.value{cursor:pointer;text-align:start;border:1px solid var(--line);border-inline-start:3px solid rgba(200,103,46,.4);background:rgba(244,228,196,.04);padding:20px 22px;border-radius:3px;display:grid;gap:4px;transition:background .3s,border-color .3s}
-.value b{font-size:1.1rem;color:#fff}
-.value>span{color:var(--mist);font-size:.96rem;display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .4s var(--ease),opacity .4s}
-.value>span>span{overflow:hidden}
-.value.on{background:rgba(244,228,196,.09);border-inline-start-color:var(--orange)}
-.value.on>span{grid-template-rows:1fr;opacity:1}
-.value-note{display:block;margin-top:8px;font-size:.85rem;color:rgba(244,228,196,.7)}
 .about-more{margin-top:64px}
 .mv{display:grid;grid-template-columns:1fr 1fr;gap:22px}
 .mv-card{padding:26px 28px;border:1px solid var(--line);border-inline-start:3px solid var(--orange);border-radius:3px;background:rgba(244,228,196,.07)}
@@ -233,6 +225,8 @@ body[data-lang="en"] .stop-title{font-family:'Fraunces',serif;font-weight:600}
 .core-values li{display:grid;gap:6px;align-content:start;padding:20px 22px;border:1px solid var(--line);border-inline-start:3px solid rgba(200,103,46,.4);border-radius:3px;background:rgba(244,228,196,.04)}
 .core-values b{font-size:1.1rem;color:#fff}
 .core-values li>span{color:var(--mist);font-size:.96rem}
+.soft-note{margin:18px 0 0;font-size:.85rem;color:rgba(244,228,196,.6)}
+.route-note{margin:10px 0 0;padding-inline-start:76px;max-width:58ch;font-size:.88rem;color:rgba(244,228,196,.6)}
 
 /* ===== Reviews ===== */
 .reviews-ui{display:grid;grid-template-columns:minmax(0,1fr) 300px;grid-template-rows:auto auto;gap:22px 40px;align-items:start}
@@ -380,8 +374,7 @@ body[data-lang="en"] .quote blockquote{font-family:'Fraunces',Georgia,serif;font
   .stop-title{font-size:1.08rem}
   .dot{width:46px;height:46px;font-size:1.05rem}
   .route::before,.route::after{inset-inline-start:22px}
-  .stop-body>p{padding-inline-start:66px}
-  .value{padding:16px 18px}
+  .stop-body>p,.route-note{padding-inline-start:66px}
   .about-more{margin-top:48px}
   .mv-card{padding:20px 18px}
   .core-values{grid-template-columns:1fr}
