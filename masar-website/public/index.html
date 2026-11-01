@@ -36,7 +36,7 @@
     <li><a href="#about" data-target="about"><span data-ar>من نحن</span><span data-en>About</span></a></li>
     <li><a href="#reviews" data-target="reviews"><span data-ar>الآراء</span><span data-en>Reviews</span></a></li>
     <li><a href="#blog" data-target="blog"><span data-ar>المدونة</span><span data-en>Blog</span></a></li>
-    <li><a href="#contact" data-target="contact"><span data-ar>الوصول</span><span data-en>Arrival</span></a></li>
+    <li><a href="#contact" data-target="contact"><span data-ar>تواصل معنا</span><span data-en>Contact</span></a></li>
   </ol>
 </nav>
 <div class="topbar" aria-hidden="true"><i id="topbarFill"></i></div>
@@ -77,8 +77,8 @@
       <span data-en><span class="ln">Your path to</span> <span class="ln">studying in Egypt</span> <span class="ln accent-ln">starts here.</span></span>
     </h1>
     <p class="lede">
-      <span data-ar>نرافق الطلاب الوافدين من الخليج ومن كل أنحاء العالم للقبول في أي جامعة مصرية، حكومية أو خاصة: بكالوريوس، ماجستير ودكتوراه، وشهادات مهنية. من أول استشارة حتى التسجيل النهائي.</span>
-      <span data-en>We guide international students from the Gulf and around the world into any Egyptian university, public or private: bachelor's, master's and PhD, and professional certificates. From the first consultation to final enrollment.</span>
+      <span data-ar>نرافق الطلاب الوافدين من الخليج ومن كل أنحاء العالم للقبول في أي جامعة مصرية، حكومية أو خاصة: بكالوريوس، ماجستير ودكتوراه، وشهادات مهنية، حضوريًا أو أونلاين. معك من القبول والأوراق وحتى يوم تخرجك.</span>
+      <span data-en>We guide international students from the Gulf and around the world into any Egyptian university, public or private: bachelor's, master's and PhD, and professional certificates, on site or online. With you from admission and paperwork until graduation day.</span>
     </p>
     <div class="actions">
       <a class="btn btn-solid" href="#contact"><span data-ar>ابدأ التقديم الآن</span><span data-en>Start your application</span></a>
@@ -124,19 +124,20 @@
       <article class="pass" id="pass" role="tabpanel" aria-live="polite">
         <div class="pass-main">
           <div class="pass-route">
-            <div><small><span data-ar>من</span><span data-en>From</span></small><strong id="passFrom">—</strong><em id="passFromName"></em></div>
+            <div><small><span data-ar>من</span><span data-en>From</span></small><strong id="passFrom">ANY</strong><em id="passFromName"><span data-ar>من أي مكان</span><span data-en>Anywhere</span></em></div>
             <svg class="pass-arc" viewBox="0 0 160 40" aria-hidden="true"><path d="M4 34C50 2 110 2 156 30" stroke-dasharray="2 6"/></svg>
-            <div><small><span data-ar>إلى</span><span data-en>To</span></small><strong>CAI</strong><em><span data-ar>القاهرة</span><span data-en>Cairo</span></em></div>
+            <div><small><span data-ar>إلى</span><span data-en>To</span></small><strong>EGY</strong><em><span data-ar>مصر</span><span data-en>Egypt</span></em></div>
           </div>
-          <h3 id="passTitle"></h3>
-          <p id="passIntro"></p>
+          <!-- Defaults for the Bachelor's track, so the box is never blank before script.js fills it -->
+          <h3 id="passTitle"><span data-ar>البكالوريوس في الجامعات المصرية</span><span data-en>Bachelor's degrees in Egypt</span></h3>
+          <p id="passIntro"><span data-ar>لخريجي الثانوية العامة الراغبين في الالتحاق بأي جامعة مصرية، حكومية أو خاصة، من اختيار التخصص وحتى يوم التخرج.</span><span data-en>For secondary-school graduates who want to join any Egyptian university, public or private, from choosing a major until graduation day.</span></p>
           <ul class="pass-list" id="passList"></ul>
         </div>
         <div class="pass-stub">
-          <div><small><span data-ar>المسار</span><span data-en>Track</span></small><b id="passTrack"></b></div>
-          <div><small><span data-ar>الصيغة</span><span data-en>Format</span></small><b id="passFormat"></b></div>
+          <div><small><span data-ar>المسار</span><span data-en>Track</span></small><b id="passTrack"><span data-ar>البكالوريوس</span><span data-en>Bachelor's</span></b></div>
+          <div><small><span data-ar>الصيغة</span><span data-en>Format</span></small><b id="passFormat"><span data-ar>حسب التخصص</span><span data-en>Depends on your major</span></b></div>
           <div><small><span data-ar>المتابعة</span><span data-en>Handling</span></small><b><span data-ar>شخصية 1:1</span><span data-en>Personal, 1:1</span></b></div>
-          <a class="btn btn-solid btn-sm" href="#contact" id="passCta"></a>
+          <a class="btn btn-solid btn-sm" href="#contact" id="passCta"><span data-ar>تحقق من أهليتك</span><span data-en>Check your eligibility</span></a>
         </div>
       </article>
     </div>
@@ -148,7 +149,7 @@
   <div class="wrap how-grid">
     <header class="sec-head sticky-head">
       <h2><span data-ar>آلية العمل</span><span data-en>How it works</span></h2>
-      <p><span data-ar>خمس محطات واضحة من أول رسالة حتى أول يوم دراسي. اضغط على أي محطة لتفاصيلها.</span><span data-en>Five clear stops from your first message to your first day of class. Tap any stop for details.</span></p>
+      <p><span data-ar>خمس محطات واضحة من القبول والأوراق وحتى يوم تخرجك، سواء درست حضوريًا أو أونلاين. اضغط على أي محطة لتفاصيلها.</span><span data-en>Five clear stops from admission and paperwork until graduation day, whether you study on site or online. Tap any stop for details.</span></p>
       <div class="how-meter"><bdi dir="ltr"><span id="howCount">1</span>/5</bdi></div>
     </header>
 
@@ -165,14 +166,14 @@
           <span class="dot">2</span>
           <span class="stop-title"><span data-ar>اختيار الجامعة والتخصص</span><span data-en>Choosing university and major</span></span>
         </button>
-        <div class="stop-body"><p><span data-ar>نقارن معك بين الجامعات الحكومية والخاصة والبرامج المتاحة حسب مجموعك وتخصصك وأهدافك المهنية.</span><span data-en>We compare public and private universities and available programs with you, based on your grades, field and career goals.</span></p></div>
+        <div class="stop-body"><p><span data-ar>نقارن معك بين الجامعات الحكومية والخاصة والبرامج المتاحة حسب مجموعك وتخصصك وأهدافك المهنية، ونوضح لك نظام الدراسة في تخصصك: حضور تام، أو حضور جزئي، أو أونلاين.</span><span data-en>We compare public and private universities and available programs with you, based on your grades, field and career goals, and confirm how your major is taught: full attendance, partial attendance or online.</span></p></div>
       </li>
       <li class="stop" data-step="3">
         <button type="button" class="stop-head" aria-expanded="false">
           <span class="dot">3</span>
           <span class="stop-title"><span data-ar>تجهيز الملف والمعادلة</span><span data-en>Preparing your file</span></span>
         </button>
-        <div class="stop-body"><p><span data-ar>نساعدك على تجميع الأوراق وتوثيقها، ونتابع معادلة شهادتك الصادرة من بلدك لدى الجهات المصرية المختصة.</span><span data-en>We help you gather and authenticate your documents, and follow up on the equivalency of your home-country certificate with the relevant Egyptian authorities.</span></p></div>
+        <div class="stop-body"><p><span data-ar>نساعدك على تجميع الأوراق المطلوبة، ونتابع معادلة شهادتك الصادرة من بلدك لدى الجهات المصرية المختصة. توثيق المستندات لدى الجهات الحكومية متاح كخدمة إضافية اختيارية.</span><span data-en>We help you gather the required documents and follow up on the equivalency of your home-country certificate with the relevant Egyptian authorities. Government document authentication is available as an optional extra service.</span></p></div>
       </li>
       <li class="stop" data-step="4">
         <button type="button" class="stop-head" aria-expanded="false">
@@ -184,9 +185,9 @@
       <li class="stop" data-step="5">
         <button type="button" class="stop-head" aria-expanded="false">
           <span class="dot">5</span>
-          <span class="stop-title"><span data-ar>القبول والوصول</span><span data-en>Admission and arrival</span></span>
+          <span class="stop-title"><span data-ar>القبول والمتابعة حتى التخرج</span><span data-en>Admission, then on to graduation</span></span>
         </button>
-        <div class="stop-body"><p><span data-ar>نرافقك حتى صدور القبول النهائي والتسجيل الفعلي، مع إرشادات حول السكن والاستقرار في مصر.</span><span data-en>We stay with you until final admission and enrollment, with guidance on housing and settling into life in Egypt.</span></p></div>
+        <div class="stop-body"><p><span data-ar>نرافقك حتى صدور القبول النهائي والتسجيل الفعلي، ومع باقات المتابعة السنوية نبقى معك حتى يوم تخرجك. وللدارسين حضوريًا، دعم الوصول والإقامة في مصر متاح كخدمة إضافية اختيارية.</span><span data-en>We stay with you until final admission and enrollment, and with our yearly follow-up packages, all the way to graduation day. For on-site students, arrival and residency support in Egypt is available as an optional extra service.</span></p></div>
       </li>
     </ol>
   </div>
@@ -198,8 +199,8 @@
     <div>
       <h2><span data-ar>من نحن</span><span data-en>About Masar</span></h2>
       <p class="about-lede">
-        <span data-ar>مسار جهة استشارية تعليمية مقرها مصر، تساعد الطلاب الوافدين من الخليج ومن مختلف دول العالم على الالتحاق بأي جامعة مصرية حكومية أو خاصة، سواء للبكالوريوس أو الدراسات العليا أو الشهادات المهنية. نتعامل مع كل حالة بشكل شخصي من أول استشارة حتى القبول النهائي.</span>
-        <span data-en>Masar is an Egypt-based education consultancy helping international students from the Gulf and around the world enroll in any Egyptian university, public or private, whether for a bachelor's degree, postgraduate study or a professional certificate. We handle every case personally, from the first consultation to final admission.</span>
+        <span data-ar>مسار جهة استشارية تعليمية مقرها مصر، تساعد الطلاب الوافدين من الخليج ومن مختلف دول العالم على الالتحاق بأي جامعة مصرية حكومية أو خاصة، سواء للبكالوريوس أو الدراسات العليا أو الشهادات المهنية. نتعامل مع كل حالة بشكل شخصي، حضوريًا أو أونلاين، من أول استشارة وحتى يوم التخرج.</span>
+        <span data-en>Masar is an Egypt-based education consultancy helping international students from the Gulf and around the world enroll in any Egyptian university, public or private, whether for a bachelor's degree, postgraduate study or a professional certificate. We handle every case personally, on site or online, from the first consultation until graduation day.</span>
       </p>
     </div>
     <div class="values" id="values">
@@ -209,7 +210,7 @@
       </button>
       <button type="button" class="value">
         <b><span data-ar>شفافية في كل خطوة</span><span data-en>Transparent at every step</span></b>
-        <span><span data-ar>نوضح كل خطوة ومتطلباتها وتكلفتها قبل أن نبدأ.</span><span data-en>We explain every step, what it requires and what it costs before we begin.</span></span>
+        <span><span data-ar>نوضح كل خطوة ومتطلباتها وتكلفتها قبل أن نبدأ.<small class="value-note">رسوم الجامعة والرسوم الحكومية وأي تكاليف أخرى منفصلة عن أتعاب مسار.</small></span><span data-en>We explain every step, what it requires and what it costs before we begin.<small class="value-note">University, government and other costs are separate from Masar's fee.</small></span></span>
       </button>
       <button type="button" class="value">
         <b><span data-ar>معرفة محلية بالجامعات</span><span data-en>On the ground in Egypt</span></b>

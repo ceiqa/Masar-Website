@@ -46,6 +46,8 @@ public/
 
 Posts with `url: null` show as "Coming soon".
 
+The Blog section is hidden for now. To show it, set `SHOW_BLOG = true` at the top of `public/script.js` once at least one real post is published.
+
 ## Adding a review
 
 The Reviews section is hidden for now. To show it, set `SHOW_REVIEWS = true` at the top of `public/script.js` after adding real reviews.

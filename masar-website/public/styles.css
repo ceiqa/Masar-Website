@@ -222,6 +222,7 @@ body[data-lang="en"] .stop-title{font-family:'Fraunces',serif;font-weight:600}
 .value>span>span{overflow:hidden}
 .value.on{background:rgba(244,228,196,.09);border-inline-start-color:var(--orange)}
 .value.on>span{grid-template-rows:1fr;opacity:1}
+.value-note{display:block;margin-top:8px;font-size:.85rem;color:rgba(244,228,196,.7)}
 
 /* ===== Reviews ===== */
 .reviews-ui{display:grid;grid-template-columns:minmax(0,1fr) 300px;grid-template-rows:auto auto;gap:22px 40px;align-items:start}

@@ -9,6 +9,9 @@ const WA_NUMBER = '201042464651';
 // Reviews section: set to true once real reviews are added to REVIEWS below
 const SHOW_REVIEWS = false;
 
+// Blog section: set to true once at least one real post is published in POSTS below
+const SHOW_BLOG = false;
+
 // Countries shown in the hero picker (Gulf first, then "anywhere")
 const ORIGINS = [
   { id: 'sa', code: 'RUH', ar: 'السعودية', en: 'Saudi Arabia' },
@@ -34,47 +37,47 @@ const MORE_COUNTRIES = [
 const TRACKS = {
   bachelor: {
     ar: {
-      name: 'البكالوريوس', title: 'البكالوريوس في الجامعات المصرية', format: 'حضوري',
-      intro: 'لخريجي الثانوية العامة الراغبين في الالتحاق بأي جامعة مصرية، حكومية أو خاصة، من اختيار التخصص حتى القبول النهائي.',
+      name: 'البكالوريوس', title: 'البكالوريوس في الجامعات المصرية', format: 'حسب التخصص',
+      intro: 'لخريجي الثانوية العامة الراغبين في الالتحاق بأي جامعة مصرية، حكومية أو خاصة، من اختيار التخصص وحتى يوم التخرج.',
       cta: 'تحقق من أهليتك',
       items: [
         ['اختيار الجامعة والتخصص', 'نقارن بين الجامعات الحكومية والخاصة حسب مجموعك وأهدافك المهنية.'],
         ['معادلة الشهادة الثانوية', 'نتابع معادلة شهادتك الصادرة من بلدك لدى الجهات المصرية المختصة.'],
         ['التقديم والمتابعة', 'نقدّم نيابة عنك ونتابع ملفك أولًا بأول حتى صدور القبول.'],
-        ['الاستقرار بعد القبول', 'إرشادات حول السكن والتسجيل الجامعي للقادمين من خارج مصر.']
+        ['المتابعة حتى التخرج', 'مع باقات المتابعة السنوية نبقى معك حتى يوم تخرجك.'],
+        ['الوصول والإقامة (اختياري)', 'دعم الوصول والإقامة في مصر متاح كخدمة إضافية اختيارية.']
       ]
     },
     en: {
-      name: "Bachelor's", title: "Bachelor's degrees in Egypt", format: 'On campus',
-      intro: 'For secondary-school graduates who want to join any Egyptian university, public or private, from choosing a major to final admission.',
+      name: "Bachelor's", title: "Bachelor's degrees in Egypt", format: 'Depends on your major',
+      intro: 'For secondary-school graduates who want to join any Egyptian university, public or private, from choosing a major until graduation day.',
       cta: 'Check your eligibility',
       items: [
         ['University and major', 'We compare public and private universities based on your grades and career goals.'],
         ['Certificate equivalency', 'We follow up on the equivalency of your home-country certificate with the Egyptian authorities.'],
         ['Application and follow-up', 'We apply on your behalf and track your file until admission is confirmed.'],
-        ['Settling in', 'Guidance on housing and university registration for students arriving from abroad.']
+        ['Follow-up to graduation', 'With our yearly follow-up packages, we stay with you until graduation day.'],
+        ['Arrival and residency (optional)', 'Arrival and residency support in Egypt is available as an optional extra service.']
       ]
     }
   },
   postgrad: {
     ar: {
       name: 'ماجستير ودكتوراه', title: 'الدراسات العليا: ماجستير ودكتوراه', format: 'أونلاين / حضوري',
-      intro: 'لأصحاب المؤهلات الجامعية الراغبين في استكمال دراستهم العليا في مصر، حضوريًا أو عن بعد بالكامل.',
+      intro: 'لأصحاب المؤهلات الجامعية الراغبين في الماجستير أو الدكتوراه في جامعة مصرية، عبر أحد مسارين حسب تخصصك:',
       cta: 'استفسر عن برنامجك',
       items: [
-        ['ماجستير حضوري أو أونلاين', 'نطابق تخصصك السابق مع البرامج المتاحة، وننسق التقديم مع الجامعة.'],
-        ['دكتوراه بإشراف أكاديمي', 'نساعدك في تحديد مجال البحث والمشرف والمتطلبات الأكاديمية.'],
-        ['معادلة المؤهلات', 'نتابع معادلة شهادتك الجامعية السابقة لدى الجهات المصرية المختصة.']
+        ['الدراسة أونلاين بأقل حضور', 'تدرس من بلدك، وتحضر إلى مصر عند الحاجة فقط للاختبارات أو المناقشة، حسب تخصصك.'],
+        ['الدراسة حضوريًا', 'تدرس في الحرم الجامعي، ويتطلب هذا المسار وجودك في مصر خلال فترة الدراسة.']
       ]
     },
     en: {
       name: "Master's & PhD", title: "Postgraduate study: master's and PhD", format: 'Online / on campus',
-      intro: 'For degree holders who want to continue their studies in Egypt, on campus or fully online.',
+      intro: "For degree holders who want a master's or PhD at an Egyptian university, through one of two paths depending on your major:",
       cta: 'Ask about your program',
       items: [
-        ["Master's, on campus or online", 'We match your previous degree with available programs and coordinate your application.'],
-        ['PhD with academic supervision', 'We help you define your research area, supervisor and academic requirements.'],
-        ['Credential equivalency', 'We follow up on the equivalency of your previous degree with the Egyptian authorities.']
+        ['Online, with minimum attendance', 'Study from your home country, coming to Egypt only when needed for exams or your thesis defense, depending on your major.'],
+        ['On site', 'Study on campus. This path requires you to be in Egypt during your studies.']
       ]
     }
   },
@@ -440,6 +443,10 @@ const rail = $('#rail'), railFill = $('#railFill'), railPlane = $('#railPlane');
 if (!SHOW_REVIEWS) {
   $('#reviews').hidden = true;
   $$('a[href="#reviews"]').forEach(a => { (a.closest('li') || a).hidden = true; });
+}
+if (!SHOW_BLOG) {
+  $('#blog').hidden = true;
+  $$('a[href="#blog"]').forEach(a => { (a.closest('li') || a).hidden = true; });
 }
 const sectionIds = ['top', 'tracks', 'how', 'about', 'reviews', 'blog', 'contact'].filter(id => !document.getElementById(id).hidden);
 const sections = sectionIds.map(id => document.getElementById(id));
