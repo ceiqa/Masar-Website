@@ -223,6 +223,16 @@ body[data-lang="en"] .stop-title{font-family:'Fraunces',serif;font-weight:600}
 .value.on{background:rgba(244,228,196,.09);border-inline-start-color:var(--orange)}
 .value.on>span{grid-template-rows:1fr;opacity:1}
 .value-note{display:block;margin-top:8px;font-size:.85rem;color:rgba(244,228,196,.7)}
+.about-more{margin-top:64px}
+.mv{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.mv-card{padding:26px 28px;border:1px solid var(--line);border-inline-start:3px solid var(--orange);border-radius:3px;background:rgba(244,228,196,.07)}
+.mv-card h3,.mv-sub{margin:0 0 10px;font-size:.95rem;font-weight:700;color:var(--orange-lit)}
+.mv-card p{margin:0;font-size:1.12rem;color:#fff}
+.mv-sub{margin:48px 0 16px}
+.core-values{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.core-values li{display:grid;gap:6px;align-content:start;padding:20px 22px;border:1px solid var(--line);border-inline-start:3px solid rgba(200,103,46,.4);border-radius:3px;background:rgba(244,228,196,.04)}
+.core-values b{font-size:1.1rem;color:#fff}
+.core-values li>span{color:var(--mist);font-size:.96rem}
 
 /* ===== Reviews ===== */
 .reviews-ui{display:grid;grid-template-columns:minmax(0,1fr) 300px;grid-template-rows:auto auto;gap:22px 40px;align-items:start}
@@ -324,6 +334,8 @@ body[data-lang="en"] .quote blockquote{font-family:'Fraunces',Georgia,serif;font
   .hero{grid-template-columns:1fr;align-content:center;padding-top:130px}
   .origin-card{justify-self:start;margin:0}
   .tracks-ui,.how-grid,.about-grid,.contact-grid{grid-template-columns:1fr;gap:36px}
+  .mv{grid-template-columns:1fr}
+  .core-values{grid-template-columns:1fr 1fr}
   .track-tabs{flex-direction:row;overflow-x:auto;scrollbar-width:none}
   .track-tabs button{flex:1 0 200px}
   .track-tabs button[aria-selected="true"]{transform:none}
@@ -370,6 +382,9 @@ body[data-lang="en"] .quote blockquote{font-family:'Fraunces',Georgia,serif;font
   .route::before,.route::after{inset-inline-start:22px}
   .stop-body>p{padding-inline-start:66px}
   .value{padding:16px 18px}
+  .about-more{margin-top:48px}
+  .mv-card{padding:20px 18px}
+  .core-values{grid-template-columns:1fr}
   .form{padding:22px 18px}
   .foot{margin-top:70px;padding-bottom:calc(90px + env(safe-area-inset-bottom,0px))}
 }
