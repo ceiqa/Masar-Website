@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Add a <url> entry for each blog post once the Blog section is switched on -->
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<!-- Add both language versions of each new blog post, each listing the other as an alternate -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.masarconsultancy.com/</loc>
-    <lastmod>2026-11-01</lastmod>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://www.masarconsultancy.com/blog/saudi-masters-phd-egypt</loc>
+    <lastmod>2026-11-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.masarconsultancy.com/blog/saudi-masters-phd-egypt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.masarconsultancy.com/en/blog/saudi-masters-phd-egypt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.masarconsultancy.com/blog/saudi-masters-phd-egypt"/>
+  </url>
+  <url>
+    <loc>https://www.masarconsultancy.com/en/blog/saudi-masters-phd-egypt</loc>
+    <lastmod>2026-11-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.masarconsultancy.com/blog/saudi-masters-phd-egypt"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.masarconsultancy.com/en/blog/saudi-masters-phd-egypt"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.masarconsultancy.com/blog/saudi-masters-phd-egypt"/>
   </url>
 </urlset>

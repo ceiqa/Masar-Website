@@ -10,7 +10,7 @@ const WA_NUMBER = '201042464651';
 const SHOW_REVIEWS = false;
 
 // Blog section: set to true once at least one real post is published in POSTS below
-const SHOW_BLOG = false;
+const SHOW_BLOG = true;
 
 // Countries shown in the hero picker (Gulf first, then "anywhere")
 const ORIGINS = [
@@ -141,8 +141,9 @@ const REVIEWS = [
 ];
 
 /* ---------- BLOG ----------
-   To publish a post: add an object here. Give it a `url` (e.g. 'blog/my-post.html')
-   and a `date` ('2026-10-05'); posts without a url show as "Coming soon". */
+   To publish a post: add an object here (newest first). Each language gets its own `url`
+   (Arabic: '/blog/<slug>', English: '/en/blog/<slug>') and the post needs a `date`
+   ('2026-10-05'); posts without a url show as "Coming soon". */
 const BLOG_CATEGORIES = {
   all: { ar: 'الكل', en: 'All' },
   admissions: { ar: 'القبول', en: 'Admissions' },
@@ -151,19 +152,9 @@ const BLOG_CATEGORIES = {
 };
 const POSTS = [
   {
-    cat: 'admissions', url: null, date: null, minutes: 6,
-    ar: { title: 'كيف يتم القبول في الجامعات المصرية للطلاب الوافدين؟', excerpt: 'نظرة عامة على مراحل التقديم من اختيار الجامعة حتى خطاب القبول.' },
-    en: { title: 'How admission to Egyptian universities works for international students', excerpt: 'An overview of the application stages, from choosing a university to the acceptance letter.' }
-  },
-  {
-    cat: 'documents', url: null, date: null, minutes: 5,
-    ar: { title: 'معادلة الشهادة: ما الذي تجهزه قبل التقديم', excerpt: 'قائمة الأوراق التي يحتاجها ملفك وكيف توثقها في بلدك.' },
-    en: { title: 'Certificate equivalency: what to prepare before you apply', excerpt: 'The documents your file needs and how to authenticate them at home.' }
-  },
-  {
-    cat: 'life', url: null, date: null, minutes: 7,
-    ar: { title: 'شهرك الأول في القاهرة: السكن والتسجيل', excerpt: 'نصائح عملية لأول أسابيعك في مصر بعد صدور القبول.' },
-    en: { title: 'Your first month in Cairo: housing and registration', excerpt: 'Practical advice for your first weeks in Egypt after admission.' }
+    cat: 'admissions', date: '2026-11-10', minutes: 6,
+    ar: { url: '/blog/saudi-masters-phd-egypt', title: 'الماجستير والدكتوراه في مصر للطالب السعودي: الخطوات الرسمية', excerpt: 'دليل من المصادر الرسمية: كيف تتحقق من اعتراف البرنامج في السعودية، وتعادل شهادتك، وتقدم على الماجستير أو الدكتوراه في مصر.' },
+    en: { url: '/en/blog/saudi-masters-phd-egypt', title: "Master's & PhD in Egypt for Saudi Students: The Official Steps", excerpt: "An official-sources guide: check Saudi recognition, get your degree equated and apply for a Master's or PhD in Egypt." }
   }
 ];
 
@@ -365,19 +356,20 @@ $('#quote').addEventListener('pointerup', e => {
 
 /* ---------- Blog ---------- */
 function renderBlog() {
-  $('#blogFilters').innerHTML = Object.entries(BLOG_CATEGORIES).map(([k, v]) =>
+  // only offer categories that have at least one post
+  $('#blogFilters').innerHTML = Object.entries(BLOG_CATEGORIES).filter(([k]) => k === 'all' || POSTS.some(p => p.cat === k)).map(([k, v]) =>
     `<button type="button" class="chip" role="tab" data-cat="${k}" aria-selected="${state.blogCat === k}">${esc(v[state.lang])}</button>`).join('');
   $$('#blogFilters .chip').forEach(c => c.addEventListener('click', () => { state.blogCat = c.dataset.cat; renderBlog(); }));
 
   const list = POSTS.filter(p => state.blogCat === 'all' || p.cat === state.blogCat);
   const dateFmt = d => new Date(d).toLocaleDateString(state.lang === 'ar' ? 'ar-EG' : 'en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
   $('#posts').innerHTML = list.map(p => {
-    const c = p[state.lang], cat = BLOG_CATEGORIES[p.cat][state.lang];
-    const foot = p.url
+    const c = p[state.lang], cat = BLOG_CATEGORIES[p.cat][state.lang], url = c.url || p.url;
+    const foot = url
       ? `<span>${p.date ? dateFmt(p.date) : ''}</span><span>${t().min(p.minutes)}</span>`
       : `<span>${t().min(p.minutes)}</span><span class="soon-tag">${t().soon}</span>`;
     const inner = `<span class="post-cat">${esc(cat)}</span><h3>${esc(c.title)}</h3><p>${esc(c.excerpt)}</p><div class="post-foot">${foot}</div>`;
-    return p.url ? `<a class="post" href="${esc(p.url)}">${inner}</a>` : `<article class="post soon">${inner}</article>`;
+    return url ? `<a class="post" href="${esc(url)}">${inner}</a>` : `<article class="post soon">${inner}</article>`;
   }).join('');
   $('#postsEmpty').hidden = list.length > 0;
 }

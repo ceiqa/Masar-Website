@@ -30,23 +30,24 @@ public/
 
 ## Adding a blog post
 
-1. Create the post page, e.g. `public/blog/admission-guide.html`.
-2. In `public/script.js`, find `POSTS` and either edit an existing entry or add a new one:
+Each post has two pages: Arabic (the main one) at `public/blog/<slug>.html`, served at `/blog/<slug>`, and English at `public/en/blog/<slug>.html`, served at `/en/blog/<slug>`. Copy `public/blog/saudi-masters-phd-egypt.html` and its English twin as the template: they carry the canonical and hreflang links to each other, link-preview tags and `BlogPosting` details for Google. Put the cover in `public/assets/blog/` as `<slug>.jpg` (1600×900) and `<slug>-og.jpg` (1200×630). External links open in a new tab with `rel="noopener noreferrer"`.
+
+1. Create both post pages.
+2. In `public/script.js`, add an entry at the top of `POSTS`:
 
 ```js
 {
   cat: 'admissions',              // admissions | documents | life (or add a category to BLOG_CATEGORIES)
-  url: 'blog/admission-guide.html',
   date: '2026-10-05',
   minutes: 6,
-  ar: { title: '...', excerpt: '...' },
-  en: { title: '...', excerpt: '...' }
+  ar: { url: '/blog/admission-guide', title: '...', excerpt: '...' },
+  en: { url: '/en/blog/admission-guide', title: '...', excerpt: '...' }
 }
 ```
 
-Posts with `url: null` show as "Coming soon".
+3. Add both URLs to `public/sitemap.xml`, following the existing entries.
 
-The Blog section is hidden for now. To show it, set `SHOW_BLOG = true` at the top of `public/script.js` once at least one real post is published.
+Posts with no `url` show as "Coming soon". Category filters only appear once a category has a post.
 
 ## Adding a review
 
